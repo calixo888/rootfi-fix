@@ -2,7 +2,15 @@ import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
+import { Roboto } from "@next/font/google";
 
+const roboto = Roboto({
+  weight: ["400", "700", "100", "300", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  preload: true,
+  display: "swap",
+});
 function MyApp(props) {
   const { Component, pageProps } = props;
   const [mounted, setMounted] = useState(false);
@@ -12,6 +20,11 @@ function MyApp(props) {
   }, []);
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${roboto.style.fontFamily};
+        }
+      `}</style>
       {/* <CacheProvider value={clientSideEmotionCache}> */}
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -25,7 +38,7 @@ function MyApp(props) {
         }}
       >
         {/* <CssBaseline /> */}
-        <div style={{ visibility: mounted ? "visible" : "hidden" }}>
+        <div className={roboto.className} style={{ visibility: mounted ? "visible" : "hidden" }}>
           <Component {...pageProps} />
         </div>
       </MantineProvider>
@@ -36,7 +49,7 @@ function MyApp(props) {
 }
 
 const mantineTheme = {
-  fontFamily: "Roboto",
+  // fontFamily: "Roboto",
 
   fontSizes: {
     xs: 10,
@@ -53,7 +66,7 @@ const mantineTheme = {
       h3: { fontSize: 16 },
       h4: { fontSize: 14 },
     },
-    fontFamily: "Roboto",
+    // fontFamily: "Roboto",
   },
   radius: {
     lg: 0,

@@ -16,6 +16,7 @@
     "@mantine/modals": "^5.8.3",
     "@mantine/notifications": "^5.8.3",
     "@mantine/prism": "^5.8.3",
+    "@next/font": "^13.0.4",
     "captivated": "^0.2.16",
     "dayjs": "^1.11.6",
     "next": "13.0.4",
