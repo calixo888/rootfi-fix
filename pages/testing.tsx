@@ -9,7 +9,12 @@ export const CAPTIVATED_API_KEY = "Y6Uan0xsnFdU34pegHmODAxpOxmjmB";
 export default function Testing() {
   useEffect(() => {
     init(CAPTIVATED_API_KEY);
-    setEnvironment("production");
+    setEnvironment("development");
+    registerUser({
+      email: "suraj.kadiyala@rootfi.in",
+      name: "Suraj Kadiyala",
+      phone: "1234567890",
+    });
   }, []);
 
   return (
