@@ -1,8 +1,16 @@
 import { Center, Grid, Group, PasswordInput, Space, Stack, TextInput } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
+import { useEffect } from "react";
 
 export default function Login() {
   const width = useViewportSize().width;
+
+  useEffect(() => {
+    //wait 5 seconds
+    setTimeout(() => {
+      console.log("5 seconds passed");
+    }, 5000);
+  }, []);
 
   return (
     <>
