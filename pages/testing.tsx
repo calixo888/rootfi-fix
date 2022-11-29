@@ -11,16 +11,20 @@ export default function Testing() {
     init(CAPTIVATED_API_KEY);
     setEnvironment("development");
     registerUser({
-      email: "suraj.kadiyala@rootfi.in",
+      // email: "suraj.kadiyala@rootfi.in",
       name: "Suraj Kadiyala",
-      phone: "1234567890",
+      // phone: "1234567890",
     });
   }, []);
 
   return (
     <div>
       <h1>Testing</h1>
-      <Captivated primaryColor="#fff" backgroundColor="#0070F4" pmfSurveyPromptDelay={3000} />
+      <Captivated
+        primaryColor="#fff"
+        backgroundColor="#0070F4"
+        pmfSurveyPromptDelay={3000}
+      />
     </div>
   );
 }
